@@ -1,0 +1,9 @@
+public class DivisibleBy3 {
+    public static void main(String[] args) {
+
+        for (int variable = 3; variable <= 100; variable+=3) {
+            System.out.println(variable);
+        }
+
+    }
+}
