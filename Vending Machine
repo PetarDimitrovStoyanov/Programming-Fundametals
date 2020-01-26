@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+public class VendingMachine {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String commandForCoins = sc.nextLine();
+        double totalCoins = 0.00;
+
+        double nutsPrice = 2.00;
+        double waterPrice = 0.70;
+        double crispsPrice = 1.50;
+        double sodaPrice = 0.80;
+        double cokePrice = 1.00;
+
+        while (!(commandForCoins.equalsIgnoreCase("Start"))) {
+            double coins = Double.parseDouble(commandForCoins);
+            totalCoins += coins;
+            if (!(coins == 0.10 || coins == 0.20 || coins == 0.50 || coins == 1.00 || coins == 2.00)) {
+                System.out.printf("Cannot accept %.2f%n", coins);
+                totalCoins -= coins;
+            }
+            commandForCoins = sc.nextLine();
+        }
+
+        String product = sc.nextLine();
+        while (!(product.equalsIgnoreCase("End"))) {
+            switch (product) {
+                case "Nuts":
+                    if (totalCoins >= nutsPrice) {
+                        System.out.println("Purchased Nuts");
+                        totalCoins -= nutsPrice;
+                    } else {
+                        System.out.println("Sorry, not enough money");
+                    }
+                    break;
+                case "Water":
+                    if (totalCoins >= waterPrice) {
+                        System.out.println("Purchased Water");
+                        totalCoins -= waterPrice;
+                    } else {
+                        System.out.println("Sorry, not enough money");
+                    }
+                    break;
+                case "Crisps":
+                    if (totalCoins >= crispsPrice) {
+                        System.out.println("Purchased Crisps");
+                        totalCoins -= crispsPrice;
+                    } else {
+                        System.out.println("Sorry, not enough money");
+                    }
+                    break;
+                case "Soda":
+                    if (totalCoins >= sodaPrice) {
+                        System.out.println("Purchased Soda");
+                        totalCoins -= sodaPrice;
+                    } else {
+                        System.out.println("Sorry, not enough money");
+                    }
+                    break;
+                case "Coke":
+                    if (totalCoins >= cokePrice) {
+                        System.out.println("Purchased Coke");
+                        totalCoins -= cokePrice;
+                    } else {
+                        System.out.println("Sorry, not enough money");
+                    }
+                    break;
+                default:
+                    System.out.println("Invalid product");
+                    break;
+            }
+
+            product = sc.nextLine();
+        }
+        System.out.printf("Change: %.2f", totalCoins);
+    }
+}
