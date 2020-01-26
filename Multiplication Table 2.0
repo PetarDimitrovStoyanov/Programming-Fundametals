@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class MultiplicationTable2 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int number1 = Integer.parseInt(sc.nextLine());
+        int number2 = Integer.parseInt(sc.nextLine());
+        boolean print = false;
+
+        for (int variable = 1; variable <=10 ; variable++) {
+            if (variable >= number2){
+                print = true;
+                System.out.printf("%d X %d = %d%n", number1, variable, number1 * variable);
+            }
+        }
+
+        if (!print){
+            System.out.printf("%d X %d = %d", number1, number2, number1 * number2);
+        }
+
+    }
+}
