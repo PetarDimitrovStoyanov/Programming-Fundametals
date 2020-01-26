@@ -1,0 +1,22 @@
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.Scanner;
+
+public class SumOfOddNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = Integer.parseInt(sc.nextLine());
+        int commonDigit = 0;
+        int counter = 0;
+
+        for (int variable1 = 1; variable1 <= Integer.MAX_VALUE; variable1+=2) {
+            counter++;
+            if (counter > number) {
+                break;
+            }
+            System.out.println(variable1);
+            commonDigit += variable1;
+        }
+        System.out.printf("Sum: %d", commonDigit);
+    }
+}
