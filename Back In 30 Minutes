@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class BackIn30Minutes {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int hour = Integer.parseInt(sc.nextLine());
+        int minutes = Integer.parseInt(sc.nextLine());
+
+        int time = (hour * 60) + minutes + 30;
+        int newHour = time / 60;
+        int newMin = time % 60;
+        String newMin2 = "";
+
+        if (newHour >= 24) {
+            newHour = 0;
+        }
+        if (newMin <= 9) {
+            newMin2 = "0" + newMin;
+        } else {
+            newMin2 = "" + newMin;
+        }
+
+        System.out.printf("%d:%s", newHour, newMin2);
+
+    }
+}
