@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class StrongNumber {
+    public static void main(String[] args) {
+        // factorial numbers
+        Scanner sc = new Scanner(System.in);
+        String digit = sc.nextLine();
+
+        int factorial = 1;
+        int totalFactorial = 0;
+
+        for (int loopForTakingOfEachChar = 0; loopForTakingOfEachChar <= digit.length() - 1; loopForTakingOfEachChar++) {
+            char index = digit.charAt(loopForTakingOfEachChar);
+            String indexString = index + "";
+            int indexInteger = Integer.parseInt(indexString);
+
+            factorial = 1;
+
+            for (int loopForFactorial = 1; loopForFactorial <= indexInteger; loopForFactorial++) {
+                factorial *= loopForFactorial;
+            }
+            totalFactorial += factorial;
+        }
+
+        int parseDigit = Integer.parseInt(digit);
+        if (totalFactorial == parseDigit) {
+            System.out.println("yes");
+        } else {
+            System.out.println("no");
+        }
+
+    }
+}
