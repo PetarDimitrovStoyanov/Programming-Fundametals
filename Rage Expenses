@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class RageExpenses {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int lostGames = Integer.parseInt(sc.nextLine());
+        double headSetPrice = Double.parseDouble(sc.nextLine());
+        double mousePrice = Double.parseDouble(sc.nextLine());
+        double keyboardPrice = Double.parseDouble(sc.nextLine());
+        double displayPrice = Double.parseDouble(sc.nextLine());
+
+        double piecesTrashedHeadSets = Math.floor(lostGames / 2.00);
+        double piecesTrashedMouses = Math.floor(lostGames / 3.00);
+        double piecesTrashedKeyboards = lostGames / (6 * 1.00);
+        double test = Math.floor(piecesTrashedKeyboards);
+        double piecesTrashedDisplays = Math.floor(piecesTrashedKeyboards / 2);
+
+        double result = (piecesTrashedDisplays * displayPrice) + (piecesTrashedHeadSets * headSetPrice) +
+                (mousePrice * piecesTrashedMouses) + (keyboardPrice * test);
+
+        System.out.printf("Rage expenses: %.2f lv.", result);
+
+    }
+}
