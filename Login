@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Login {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String username = sc.nextLine();
+
+        String changer = "";
+        String password = "";
+        int counter = 0;
+        boolean isLogged = true;
+
+        for (int i = username.length() - 1; i >= 0; i--) {
+            char some = username.charAt(i);
+            changer = some + "";
+            password += changer;
+
+        }
+        String inputPassword = sc.nextLine();
+        while (!(password.equals(inputPassword))) {
+            counter++;
+            if (counter == 4) {
+                isLogged = false;
+                break;
+            }
+            System.out.println("Incorrect password. Try again.");
+            inputPassword = sc.nextLine();
+        }
+
+        if (isLogged) {
+            System.out.printf("User %s logged in.", username);
+        } else {
+            System.out.printf("User %s blocked!", username);
+        }
+    }
+}
