@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class TriangleOfNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = Integer.parseInt(sc.nextLine());
+
+        for (int loopForRows = 1; loopForRows <= number; loopForRows++) {
+            for (int i = 1; i <= loopForRows ; i++) {
+                System.out.print(loopForRows + " ");
+            }
+            System.out.println();
+        }
+
+    }
+}
